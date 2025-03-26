@@ -63,3 +63,15 @@ Die Funktion soll den folgenden Wert zurückgeben:
 Für ungültige Spielzüge wird eine Exception mit sprechender Fehlermeldung geworfen.
 
 Schreibe die Testfälle und implementiere die Funktion `play` gemäss TDD-Vorgehen.
+
+## Aufgabe 3: ISBN-13
+
+Bearbeite diese Aufgabe in `src/isbn13.test.ts` (Testcode) und `src/isbn13.ts` (Produktivcode).
+
+Bücher werden anhand einer [ISBN](https://de.wikipedia.org/wiki/Internationale_Standardbuchnummer) (internationale Standardbuchnummer) identifiziert. Früher war dies eine zehnstellige Zahl (ISBN-10). Heutzutage verwendet man die dreizehnstellige ISBN-13, um mit [EAN](https://de.wikipedia.org/wiki/European_Article_Number) (European Article Number) kompatibel zu sein. (Als Landespräfix wird die Zahl 978 oder 979 verwendet, welche für das fiktive Land _Buchland_ steht.)
+
+Die letzte Stelle einer ISBN-13 ist eine sogenannte Prüfsumme, mithilfe welcher man mögliche Fehler beim Übermitteln einer ISBN-13 bzw. Fehler beim Scanvorgang des Barcodes erkennen kann. Der Algorithmus zur [Berechnung der ISBN-13-Prüfsumme](https://de.wikipedia.org/wiki/Internationale_Standardbuchnummer#ISBN-13) soll gemäss TDD-Vorgehen in `src/isbn13.ts` in der Funktion `isValid` umgesetzt werden.
+
+Schreibe die Testfälle und implementiere die Funktion `play` gemäss TDD-Vorgehen.
+
+Dieses mal musst du selber sinnvolle Testdaten und -fälle zusammenstellen.
