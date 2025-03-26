@@ -1,10 +1,10 @@
 # Test-Driven Development
 
-Bearbeite die folgenden Übungen nach dem folgenden Vorgehen:
+Bearbeite die Aufgaben nach dem folgenden Vorgehen:
 
 1. Schreibe keinen Produktivcode, bis es einen Test gibt, der aufgrund dieses fehlenden Produktivcodes scheitert.
-2. Schreibe nicht mehr Testcode, als nötig ist, um den Test zum Scheitern zu bringen ‒ und ein Kompilierfehler gilt als Scheitern.
-3. Schreibe nicht mehr Produktivcode, als nötig ist, um den Test zum Durchlaufen zu bringen.
+2. Schreibe nicht mehr Testcode, als nötig ist, um den Test zum Scheitern zu bringen.
+3. Schreibe nicht mehr Produktivcode, als nötig ist, um den Test zum Laufen zu bringen.
 
 ## Aufgabe 0: Beispielcode betrachten
 
@@ -18,7 +18,7 @@ Der untere Test (`"subtracting numbers"`) testet die Funktion `sub` und verwende
 
 Bei der oberen Variante ist im Code besser erkennbar, was der einzelne Testfall ausdrücken soll. Bei der unteren Variante ist die Erweiterung um weitere Testfälle wesentlich weniger aufwändig, solange alle Testfälle nach dem gleichen Schema funktionieren.
 
-In der Praxis verwendet man oft eine Kombination der beiden Varianten: Parametrisierte Tests für reguläre Fälle, die laufend erweitert werden (z.B. bei der Korrektur von Fehlern) und einzelne Tests mit einer präzisen Beschreibung für Spezialfälle.
+In der Praxis verwendet man eine Kombination der beiden Varianten: Parametrisierte Tests für reguläre Fälle, die laufend erweitert werden (z.B. im Zuge der Korrektur von Fehlern) und einzelne Tests mit einer präzisen Beschreibung für Spezialfälle.
 
 Probiere in den folgenden Aufgaben beide Varianten aus (z.B. einzelne Tests in Aufgabe 1, parametrisierte Tests in Aufgabe 2 und eine Kombination davon in Aufgabe 3).
 
@@ -72,35 +72,24 @@ Bücher werden anhand einer [ISBN](https://de.wikipedia.org/wiki/Internationale_
 
 Die letzte Stelle einer ISBN-13 ist eine sogenannte Prüfsumme, mithilfe welcher man mögliche Fehler beim Übermitteln einer ISBN-13 bzw. Fehler beim Scanvorgang des Barcodes erkennen kann. Der Algorithmus zur [Berechnung der ISBN-13-Prüfsumme](https://de.wikipedia.org/wiki/Internationale_Standardbuchnummer#ISBN-13) soll gemäss TDD-Vorgehen in `src/isbn13.ts` in der Funktion `isValid` umgesetzt werden.
 
-Schreibe die Testfälle und implementiere die Funktion `play` gemäss TDD-Vorgehen.
+Schreibe die Testfälle und implementiere die Funktion `isValid` gemäss TDD-Vorgehen.
 
 Dieses mal musst du selber sinnvolle Testdaten und -fälle zusammenstellen.
 
-## Aufgabe 4: Darts (Spielvariante 501)
+## Zusatzaufgabe: Darts (Spielvariante 501)
 
 Bearbeite diese Aufgabe in `src/darts.test.ts` (Testcode) und `src/darts.ts` (Produktivcode).
 
 Bei der Darts-Spielvariante _501_ geht es darum, mit möglichst wenig Würfen von 501 auf null Punkte zu kommen. Das Spiel funktioniert (vereinfacht für einen Spieler) folgendermassen:
 
 1. Der Spieler wirft dreimal mit je einem Pfeil auf das Brett.
-2. Die Anzahl Punkte für die Runde wird berchnet und vom Zwischenstand (zu
-   Beginn: 501) abgezogen.
-    1. Bei einem Treffer in einen bestimmten Sektor erhält der Spieler die
-       einfache Punktzahl (z.B. _Single 18_: 18).
-    2. Wird der _Double Ring_ getroffen, erhält der Spieler die doppelte
-       Punktzahl des Sektors (z.B. _Double 17_: 34).
-    3. Wird der _Triple Ring_ getroffen, erhält der Spieler die dreifache
-       Punktzahl des Sektors (z.B. _Triple 20_: 60).
+2. Die Anzahl Punkte für die Runde wird berchnet und vom Zwischenstand (zu Beginn: 501) abgezogen.
+    1. Bei einem Treffer in einen bestimmten Sektor erhält der Spieler die einfache Punktzahl (z.B. _Single 18_: 18).
+    2. Wird der _Double Ring_ getroffen, erhält der Spieler die doppelte Punktzahl des Sektors (z.B. _Double 17_: 34).
+    3. Wird der _Triple Ring_ getroffen, erhält der Spieler die dreifache Punktzahl des Sektors (z.B. _Triple 20_: 60).
 3. Die Runde ist zu Ende, wenn der Spieler auf null Punkten ist.
-    1. Die Punktzahl 0 muss _exakt_ erreicht werden. Wird die Punktzahl 0
-       unterschritten (_bust_), gibt es keine Punkte. Der Zwischenstand wird auf
-       denjenigen vor dem Wurf zurückgesetzt. (Beispiel: Bei 37 offenen Punkten
-       trifft der Spieler zuerst die 20 und dann die 18 ‒ _bust_. Der Spieler
-       ist wieder bei 37 Punkten.)
-    2. Die Punktzahl 0 muss über einen _Double Checkout_ erreicht werden, d.h.
-       mit dem letzten Wurf muss man den _Double Ring_ treffen. (D.h. man kann
-       die Runde nur beenden, wenn beim letzten Wurf eine gerade Punktzahl
-       verbleibt.)
+    1. Die Punktzahl 0 muss _exakt_ erreicht werden. Wird die Punktzahl 0 unterschritten (_bust_), gibt es keine Punkte. Der Zwischenstand wird auf denjenigen vor dem Wurf zurückgesetzt. (Beispiel: Bei 37 offenen Punkten trifft der Spieler zuerst die 20 und dann die 18 ‒ _bust_. Der Spieler ist wieder bei 37 Punkten.)
+    2. Die Punktzahl 0 muss über einen _Double Checkout_ erreicht werden, d.h.  mit dem letzten Wurf muss man den _Double Ring_ treffen. (D.h. man kann die Runde nur beenden, wenn beim letzten Wurf eine gerade Punktzahl verbleibt.)
 
 Zur Illustration eine Dartscheibe mit den Sektoren, Ringen und dem _Bull's Eye_
 in der Mitte:
