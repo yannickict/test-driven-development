@@ -1,5 +1,7 @@
 # Test-Driven Development
 
+Erstelle zuerst einen Fork von diesem Repository und klone diesen. Führe den Befehl `npm install` im geklonten Verzeichnis aus.
+
 Bearbeite die Aufgaben nach dem folgenden Vorgehen:
 
 1. Schreibe keinen Produktivcode, bis es einen Test gibt, der aufgrund dieses fehlenden Produktivcodes scheitert.
@@ -12,13 +14,13 @@ Betrachte den Testcode in `src/calc.test.ts`, welcher die beiden Funktionen `sum
 
 Pro Funktion gibt es mehrere Testfälle. Mithilfe von [`describe`](https://jestjs.io/docs/api#describename-fn) werden die Testfälle gruppiert.
 
-Der obere Test (`"adding up numbers"`) testet die Funktion `sum` und verwendet dazu mehrere einzelne Tests mit einer manuell definierten Beschreibung.
+Der obere Test (`"adding up numbers"`) testet die Funktion `sum` und verwendet dazu _gruppierte_ Tests mit einer manuell definierten Beschreibung.
 
 Der untere Test (`"subtracting numbers"`) testet die Funktion `sub` und verwendet dazu _parametrisierte Tests_ mit einer generierten Beschreibung.
 
 Bei der oberen Variante ist im Code besser erkennbar, was der einzelne Testfall ausdrücken soll. Bei der unteren Variante ist die Erweiterung um weitere Testfälle wesentlich weniger aufwändig, solange alle Testfälle nach dem gleichen Schema funktionieren.
 
-In der Praxis verwendet man eine Kombination der beiden Varianten: Parametrisierte Tests für reguläre Fälle, die laufend erweitert werden (z.B. im Zuge der Korrektur von Fehlern) und einzelne Tests mit einer präzisen Beschreibung für Spezialfälle.
+In der Praxis verwendet man eine Kombination der beiden Varianten: Parametrisierte Tests für reguläre Fälle, die laufend erweitert werden (z.B. im Zuge der Korrektur von Fehlern) und gruppierte Tests mit einer präzisen Beschreibung für Spezialfälle.
 
 Probiere in den folgenden Aufgaben beide Varianten aus (z.B. einzelne Tests in Aufgabe 1, parametrisierte Tests in Aufgabe 2 und eine Kombination davon in Aufgabe 3).
 
