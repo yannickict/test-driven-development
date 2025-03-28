@@ -8,6 +8,8 @@ Bearbeite die Aufgaben nach dem folgenden Vorgehen:
 2. Schreibe nicht mehr Testcode, als nötig ist, um den Test zum Scheitern zu bringen.
 3. Schreibe nicht mehr Produktivcode, als nötig ist, um den Test zum Laufen zu bringen.
 
+**Erstelle mindestens nach jeder Aufgabe einen Commit!**
+
 ## Aufgabe 0: Beispielcode betrachten
 
 Betrachte den Testcode in `src/calc.test.ts`, welcher die beiden Funktionen `sum` und `sub` von `src/calc.ts` überprüft. 
